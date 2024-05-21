@@ -5,7 +5,7 @@ FROM jlesage/baseimage-gui:alpine-3.12-glibc
 
 # Define software versions.
 ARG JAVAJRE_VERSION=8.312.07.1
-ARG TMM_VERSION=3.1.16.1
+ARG TMM_VERSION=3.1.18
 
 # Define software download URLs.
 ARG TMM_URL=https://release.tinymediamanager.org/v3/dist/tmm_${TMM_VERSION}_linux.tar.gz
@@ -56,7 +56,7 @@ COPY rootfs/ /
 COPY VERSION /
 
 # Set environment variables.
-ENV APP_NAME="TinyMediaManager" \
+ENV APP_NAME="TinyMediaManagerv3" \
     S6_KILL_GRACETIME=8000
 
 # Define mountable directories.
@@ -66,7 +66,7 @@ VOLUME ["/media"]
 # Metadata.
 LABEL \
       org.label-schema.name="tinymediamanager" \
-      org.label-schema.description="Docker container for TinyMediaManager" \
+      org.label-schema.description="Docker container for TinyMediaManager-v3" \
       org.label-schema.version="unknown" \
       org.label-schema.vcs-url="https://github.com/romancin/tmm-docker" \
       org.label-schema.schema-version="1.0"
